@@ -1,0 +1,100 @@
+@import "./Variable/colors";
+@import "./Variable/fonts";
+@import "./Variable/mixins";
+
+.header {
+  position: absolute;
+  width: 100%;
+
+  z-index: 100;
+}
+.nav-container {
+  @include flex-center;
+  justify-content: space-between;
+  font-family: $font-poppins;
+}
+.menu {
+  @include flex-center;
+
+  .menu-icon {
+    font-size: 70px;
+    color: $main-color;
+    cursor: pointer;
+    margin-left: 1rem;
+  }
+}
+
+.logo {
+  h1 {
+    margin-left: 1rem;
+    color: $main-color;
+    text-shadow: 10px 0px 30px $header-color;
+  }
+}
+
+.right {
+  ul {
+    @include flex-center;
+    margin-right: 3rem;
+    list-style: none;
+
+    li {
+      a {
+        text-decoration: none;
+        color: $header-color;
+        margin: 1rem;
+        text-transform: uppercase;
+      }
+
+      .a {
+        color: $main-color;
+        text-shadow: 10px 0px 30px $header-color;
+      }
+    }
+  }
+}
+
+.slider {
+  display: grid;
+  align-items: center;
+  position: fixed;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(5, 4, 4, 0.966);
+  top: -100%;
+  transition: 1s ease-in-out;
+}
+.slider.active {
+  top: 0;
+  transition: 1s ease-in-out;
+}
+.container {
+  align-items: center;
+  text-align: center;
+}
+.ul-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+
+  li {
+    padding: 60px;
+    list-style: none;
+    border: 1px solid $main-color;
+
+    a {
+      text-decoration: none;
+      color: $main-color;
+      text-transform: uppercase;
+      font-size: 50px;
+      text-shadow: 5px 0px 5px $main-color;
+      letter-spacing: 2px;
+      &:hover {
+        transition: scale(120%);
+        color: rgb(241, 165, 165);
+        transition: 1s ease;
+      }
+    }
+  }
+}
